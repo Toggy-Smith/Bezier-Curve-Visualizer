@@ -104,7 +104,9 @@ void Graphics::render() {
 	if (m_logic.m_numberOfControlPointsVisible >= 3) {
 		circleShape.setPosition(m_logic.m_interpolationPoint2);
 		m_window.draw(circleShape);
+	}
 
+	if (m_logic.m_numberOfControlPointsVisible == 3) {
 		circleShape.setPosition(m_logic.m_interpolationPoint4);
 		m_window.draw(circleShape);
 	}
@@ -115,6 +117,8 @@ void Graphics::render() {
 
 		m_line.draw(m_logic.m_interpolationPoint4, m_logic.m_interpolationPoint5, sf::Color(64, 71, 249), (int) ((float) m_logic.m_controlPointRadius / 1.5f));
 
+		circleShape.setPosition(m_logic.m_interpolationPoint4);
+		m_window.draw(circleShape);
 
 		circleShape.setPosition(m_logic.m_interpolationPoint5);
 		m_window.draw(circleShape);
